@@ -34,6 +34,12 @@ export namespace io {
 
                 /** Wrapper testCaseFinished */
                 testCaseFinished: io.cucumber.messages.ITestCaseFinished;
+
+                /** Wrapper testHookStarted */
+                testHookStarted: io.cucumber.messages.ITestHookStarted;
+
+                /** Wrapper testHookFinished */
+                testHookFinished: io.cucumber.messages.ITestHookFinished;
             }
 
             /** Represents a Wrapper. */
@@ -69,8 +75,14 @@ export namespace io {
                 /** Wrapper testCaseFinished. */
                 public testCaseFinished: io.cucumber.messages.ITestCaseFinished;
 
+                /** Wrapper testHookStarted. */
+                public testHookStarted: io.cucumber.messages.ITestHookStarted;
+
+                /** Wrapper testHookFinished. */
+                public testHookFinished: io.cucumber.messages.ITestHookFinished;
+
                 /** Wrapper message. */
-                public message?: ("source"|"gherkinDocument"|"pickle"|"attachment"|"testCaseStarted"|"testStepStarted"|"testStepFinished"|"testCaseFinished");
+                public message?: ("source"|"gherkinDocument"|"pickle"|"attachment"|"testCaseStarted"|"testStepStarted"|"testStepFinished"|"testCaseFinished"|"testHookStarted"|"testHookFinished");
 
                 /**
                  * Creates a new Wrapper instance using the specified properties.
@@ -3365,6 +3377,204 @@ export namespace io {
                 public toJSON(): { [k: string]: any };
             }
 
+            /** Properties of a TestHookStarted. */
+            interface ITestHookStarted {
+
+                /** TestHookStarted pickleId */
+                pickleId: string;
+
+                /** TestHookStarted timestamp */
+                timestamp: google.protobuf.ITimestamp;
+            }
+
+            /** Represents a TestHookStarted. */
+            class TestHookStarted implements ITestHookStarted {
+
+                /**
+                 * Constructs a new TestHookStarted.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: io.cucumber.messages.ITestHookStarted);
+
+                /** TestHookStarted pickleId. */
+                public pickleId: string;
+
+                /** TestHookStarted timestamp. */
+                public timestamp: google.protobuf.ITimestamp;
+
+                /**
+                 * Creates a new TestHookStarted instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns TestHookStarted instance
+                 */
+                public static create(properties?: io.cucumber.messages.ITestHookStarted): io.cucumber.messages.TestHookStarted;
+
+                /**
+                 * Encodes the specified TestHookStarted message. Does not implicitly {@link io.cucumber.messages.TestHookStarted.verify|verify} messages.
+                 * @param message TestHookStarted message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: io.cucumber.messages.ITestHookStarted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified TestHookStarted message, length delimited. Does not implicitly {@link io.cucumber.messages.TestHookStarted.verify|verify} messages.
+                 * @param message TestHookStarted message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: io.cucumber.messages.ITestHookStarted, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a TestHookStarted message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns TestHookStarted
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): io.cucumber.messages.TestHookStarted;
+
+                /**
+                 * Decodes a TestHookStarted message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns TestHookStarted
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): io.cucumber.messages.TestHookStarted;
+
+                /**
+                 * Verifies a TestHookStarted message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a TestHookStarted message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns TestHookStarted
+                 */
+                public static fromObject(object: { [k: string]: any }): io.cucumber.messages.TestHookStarted;
+
+                /**
+                 * Creates a plain object from a TestHookStarted message. Also converts values to other types if specified.
+                 * @param message TestHookStarted
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: io.cucumber.messages.TestHookStarted, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this TestHookStarted to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
+            /** Properties of a TestHookFinished. */
+            interface ITestHookFinished {
+
+                /** TestHookFinished pickleId */
+                pickleId: string;
+
+                /** TestHookFinished testResult */
+                testResult: io.cucumber.messages.ITestResult;
+
+                /** TestHookFinished timestamp */
+                timestamp: google.protobuf.ITimestamp;
+            }
+
+            /** Represents a TestHookFinished. */
+            class TestHookFinished implements ITestHookFinished {
+
+                /**
+                 * Constructs a new TestHookFinished.
+                 * @param [properties] Properties to set
+                 */
+                constructor(properties?: io.cucumber.messages.ITestHookFinished);
+
+                /** TestHookFinished pickleId. */
+                public pickleId: string;
+
+                /** TestHookFinished testResult. */
+                public testResult: io.cucumber.messages.ITestResult;
+
+                /** TestHookFinished timestamp. */
+                public timestamp: google.protobuf.ITimestamp;
+
+                /**
+                 * Creates a new TestHookFinished instance using the specified properties.
+                 * @param [properties] Properties to set
+                 * @returns TestHookFinished instance
+                 */
+                public static create(properties?: io.cucumber.messages.ITestHookFinished): io.cucumber.messages.TestHookFinished;
+
+                /**
+                 * Encodes the specified TestHookFinished message. Does not implicitly {@link io.cucumber.messages.TestHookFinished.verify|verify} messages.
+                 * @param message TestHookFinished message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encode(message: io.cucumber.messages.ITestHookFinished, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Encodes the specified TestHookFinished message, length delimited. Does not implicitly {@link io.cucumber.messages.TestHookFinished.verify|verify} messages.
+                 * @param message TestHookFinished message or plain object to encode
+                 * @param [writer] Writer to encode to
+                 * @returns Writer
+                 */
+                public static encodeDelimited(message: io.cucumber.messages.ITestHookFinished, writer?: $protobuf.Writer): $protobuf.Writer;
+
+                /**
+                 * Decodes a TestHookFinished message from the specified reader or buffer.
+                 * @param reader Reader or buffer to decode from
+                 * @param [length] Message length if known beforehand
+                 * @returns TestHookFinished
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): io.cucumber.messages.TestHookFinished;
+
+                /**
+                 * Decodes a TestHookFinished message from the specified reader or buffer, length delimited.
+                 * @param reader Reader or buffer to decode from
+                 * @returns TestHookFinished
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): io.cucumber.messages.TestHookFinished;
+
+                /**
+                 * Verifies a TestHookFinished message.
+                 * @param message Plain object to verify
+                 * @returns `null` if valid, otherwise the reason why it is not
+                 */
+                public static verify(message: { [k: string]: any }): (string|null);
+
+                /**
+                 * Creates a TestHookFinished message from a plain object. Also converts values to their respective internal types.
+                 * @param object Plain object
+                 * @returns TestHookFinished
+                 */
+                public static fromObject(object: { [k: string]: any }): io.cucumber.messages.TestHookFinished;
+
+                /**
+                 * Creates a plain object from a TestHookFinished message. Also converts values to other types if specified.
+                 * @param message TestHookFinished
+                 * @param [options] Conversion options
+                 * @returns Plain object
+                 */
+                public static toObject(message: io.cucumber.messages.TestHookFinished, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+                /**
+                 * Converts this TestHookFinished to JSON.
+                 * @returns JSON object
+                 */
+                public toJSON(): { [k: string]: any };
+            }
+
             /** Properties of a TestResult. */
             interface ITestResult {
 
@@ -3484,7 +3694,7 @@ export namespace google {
         interface ITimestamp {
 
             /** Timestamp seconds */
-            seconds?: (number|null);
+            seconds?: (number|Long|null);
 
             /** Timestamp nanos */
             nanos: number;
@@ -3500,7 +3710,7 @@ export namespace google {
             constructor(properties?: google.protobuf.ITimestamp);
 
             /** Timestamp seconds. */
-            public seconds: (number);
+            public seconds: (number|Long);
 
             /** Timestamp nanos. */
             public nanos: number;

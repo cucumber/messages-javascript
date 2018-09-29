@@ -15,7 +15,7 @@
     "mocha-built": "mocha test/**/*.{ts,js}"
   },
   "dependencies": {
-    "protobufjs": "^6.8.6"
+    "protobufjs": "^6.8.8"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.1",
