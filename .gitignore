@@ -11,4 +11,3 @@ package-lock.json
 .compared
 acceptance
 *-go/
-src/cucumber-messages.d.ts.orig
