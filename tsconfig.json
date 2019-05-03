@@ -1,14 +1,23 @@
 {
   "compilerOptions": {
-    "noImplicitAny": true,
-    "removeComments": true,
-    "preserveConstEnums": true,
-    "sourceMap": true,
-    "rootDir": ".",
-    "outDir": "dist",
-    "allowJs": false,
+    "declaration": true,
     "target": "es5",
-    "declaration": true
+    "lib": [
+      "es5",
+      "es6",
+      "es7",
+      "es2015",
+      "es2017",
+      "dom"
+    ],
+    "sourceMap": true,
+    "allowJs": false,
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "downlevelIteration": true
   },
   "include": [
     "src/**/*",
